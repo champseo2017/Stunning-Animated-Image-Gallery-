@@ -1,0 +1,12 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background: white;
+  color: white;
+  overflow: hidden;
+  -webkit-overflow-scrolling: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+}

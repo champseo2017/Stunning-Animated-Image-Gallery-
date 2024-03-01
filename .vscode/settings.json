@@ -1,0 +1,15 @@
+{
+  "editor.linkedEditing": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontSize": 18,
+  "redhat.telemetry.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "diffEditor.wordWrap": "on",
+  "editor.wordWrap": "on",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.editor.enablePreview": false,
+  "vsicons.dontShowNewVersionMessage": true,
+  "window.zoomLevel": 2
+}
