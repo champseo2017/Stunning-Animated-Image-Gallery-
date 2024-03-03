@@ -32,4 +32,28 @@ section {
     -50%,
     -50%
   ); /* เลื่อน .wrapper กลับมาทางซ้ายและขึ้นบนครึ่งหนึ่งของขนาดของตัวมันเอง */
+  transition: all 0.5s ease; /* เมื่อมีการเปลี่ยนแปลงคุณสมบัติใดๆ ของ .wrapper (เช่น ขนาด, ตำแหน่ง, สี) การเปลี่ยนแปลงจะเกิดขึ้นอย่างเรียบเนียนในระยะเวลา 0.5 วินาที โดยใช้การเปลี่ยนแปลงแบบ 'ease' ซึ่งเริ่มช้า ค่อยๆ เร็วขึ้น และสิ้นสุดด้วยความเร็วที่ลดลง */
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center h1 {
+  font-size: 9rem;
+  margin: 0;
+  background-image: linear-gradient(45deg, magenta 25%, blue);
+  -webkit-background-clip: text;
+  background-clip: text; /* คือคำสั่ง CSS ที่ใช้กำหนดว่าพื้นหลังควรถูกตัดตามขอบเขตของข้อความ ทำให้พื้นหลังแสดงผลเฉพาะบริเวณข้อความเท่านั้น  */
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.center h2 {
+  font-size: 3rem;
+  margin-top: -1rem;
 }
