@@ -57,3 +57,71 @@ section {
   font-size: 3rem;
   margin-top: -1rem;
 }
+
+.images {
+  display: flex; /* กำหนดให้ element ภายใน .images เรียงตัวกันแบบ flexbox */
+  flex-wrap: nowrap; /* ไม่อนุญาตให้ items ยืดหยุ่นหรือ wrap ไปยังบรรทัดถัดไป */
+  align-items: center; /* จัดให้ items อยู่ตรงกลางแนวตั้ง */
+  width: fit-content; /* กำหนดความกว้างของ .images ให้พอดีกับเนื้อหาภายใน */
+  height: fit-content; /* กำหนดความสูงของ .images ให้พอดีกับเนื้อหาภายใน */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.column {
+  margin: 0 30px;
+  margin-top: 7vh;
+}
+
+.column:nth-child(odd) {
+  margin-top: -7vh;
+}
+
+.image {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 1rem;
+  margin: 5vh 0;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ปรับรูปภาพให้ครอบคลุมพื้นที่โดยไม่เปลี่ยนแปลงอัตราส่วน อาจจะตัดบางส่วนออกถ้าจำเป็น */
+  pointer-events: none; /* ป้องกันการโต้ตอบกับรูปภาพ เช่น คลิกหรือเลื่อน */
+  transition: all 0.6s ease; /* ให้การเปลี่ยนแปลงทุกอย่างเกิดขึ้นอย่างราบรื่นภายใน 0.6 วินาที */
+}
+
+.space {
+  height: 500px;
+}
+
+/* ตัวอย่างการใช้งาน transition: all 0.6s ease; กับหลายๆ สถานะ */
+
+/* กำหนด transition ให้กับ element ทุกประเภท เมื่อมีการเปลี่ยนแปลงคุณสมบัติใดๆ */
+/* .element {
+  transition: all 0.6s ease;
+} */
+
+/* กำหนดให้สีพื้นหลังเปลี่ยนเมื่อเมาส์โฮเวอร์ */
+/* .element:hover {
+  background-color: blue;
+} */
+
+/* กำหนดให้ขนาดของ element เปลี่ยนเมื่อคลิก */
+/* .element:active {
+  transform: scale(1.1);
+} */
+
+/* กำหนดให้ความโปร่งใสเปลี่ยนเมื่อ element ได้รับโฟกัส */
+/* .element:focus {
+  opacity: 0.5;
+} */
+
+/* กำหนดให้มีเงาเมื่อ element อยู่ในสถานะโฮเวอร์ */
+/* .element:hover {
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+} */
