@@ -80,11 +80,20 @@ section {
 }
 
 .image {
-  width: 300px;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 1rem;
-  margin: 5vh 0;
+  width: 300px; /* กำหนดความกว้างของภาพเป็น 300 พิกเซล */
+  height: 400px; /* กำหนดความสูงของภาพเป็น 400 พิกเซล */
+  overflow: hidden; /* ซ่อนเนื้อหาที่เกินขอบเขตของภาพ */
+  border-radius: 1rem; /* กำหนดขอบมนของภาพเป็น 1 rem */
+  margin: 5vh 0; /* กำหนดระยะห่างด้านบนและด้านล่างของภาพเป็น 5vh (5% ของความสูงของ viewport) */
+  transform: scale(0); /* เริ่มต้นด้วยการทำให้ภาพมีขนาดเล็กลงจนไม่มองเห็น */
+  transition: transform 0.8s ease; /* กำหนดให้การเปลี่ยนแปลงของ transform เกิดขึ้นอย่างราบรื่นภายใน 0.8 วินาที */
+  animation: fadeIn 0.8s ease; /* ใช้งาน animation ที่ชื่อ fadeIn ด้วยระยะเวลา 0.8 วินาทีและเอฟเฟกต์การเปลี่ยนแปลงแบบ ease */
+  animation-delay: 1s; /* เริ่ม animation หลังจากล่าช้า 1 วินาที */
+  animation-fill-mode: forwards; /* หลังจาก animation จบ ให้ภาพคงสถานะที่สิ้นสุดของ animation */
+}
+
+.image:nth-child(odd) {
+  animation-delay: 1.2s;
 }
 
 .image img {
@@ -99,29 +108,16 @@ section {
   height: 500px;
 }
 
-/* ตัวอย่างการใช้งาน transition: all 0.6s ease; กับหลายๆ สถานะ */
-
-/* กำหนด transition ให้กับ element ทุกประเภท เมื่อมีการเปลี่ยนแปลงคุณสมบัติใดๆ */
-/* .element {
-  transition: all 0.6s ease;
-} */
-
-/* กำหนดให้สีพื้นหลังเปลี่ยนเมื่อเมาส์โฮเวอร์ */
-/* .element:hover {
-  background-color: blue;
-} */
-
-/* กำหนดให้ขนาดของ element เปลี่ยนเมื่อคลิก */
-/* .element:active {
-  transform: scale(1.1);
-} */
-
-/* กำหนดให้ความโปร่งใสเปลี่ยนเมื่อ element ได้รับโฟกัส */
-/* .element:focus {
-  opacity: 0.5;
-} */
-
-/* กำหนดให้มีเงาเมื่อ element อยู่ในสถานะโฮเวอร์ */
-/* .element:hover {
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-} */
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    transform: scale(
+      0
+    ); /* เริ่มต้น animation ด้วยการทำให้ element มีขนาดเล็กลงจนไม่มองเห็น (หดเล็กสุด) */
+  }
+  100% {
+    transform: scale(
+      1
+    ); /* สิ้นสุด animation ด้วยการทำให้ element กลับมามีขนาดปกติ */
+  }
+}
