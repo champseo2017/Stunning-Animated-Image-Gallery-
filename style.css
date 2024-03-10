@@ -35,11 +35,24 @@ section {
   transition: all 0.5s ease; /* เมื่อมีการเปลี่ยนแปลงคุณสมบัติใดๆ ของ .wrapper (เช่น ขนาด, ตำแหน่ง, สี) การเปลี่ยนแปลงจะเกิดขึ้นอย่างเรียบเนียนในระยะเวลา 0.5 วินาที โดยใช้การเปลี่ยนแปลงแบบ 'ease' ซึ่งเริ่มช้า ค่อยๆ เร็วขึ้น และสิ้นสุดด้วยความเร็วที่ลดลง */
 }
 
+.wrapper:active {
+  transform: scale(0.85) translate(-50%, -50%); /* เมื่อ .wrapper ถูกคลิกหรือกด, มันจะถูกย่อขนาดลงเหลือ 85% ของขนาดเดิม และยังคงอยู่ที่ตำแหน่งกลางเดิม */
+}
+
+/* เมื่อ element ที่มี class ชื่อว่า .wrapper ถูกคลิกหรือกด (active) */
+.wrapper:active img {
+  transform: scale(
+    1.1
+  ); /* รูปภาพ (img) ภายใน .wrapper จะถูกขยายขนาดเป็น 110% ของขนาดเดิม */
+}
+
 .center {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
 }
 
 .center h1 {
@@ -51,11 +64,18 @@ section {
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
+  transform: scale(0);
+  animation: fadeIn 0.6s ease;
+  animation-fill-mode: forwards;
 }
 
 .center h2 {
   font-size: 3rem;
   margin-top: -1rem;
+  transform: scale(0);
+  animation: fadeIn 0.6s ease;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
 }
 
 .images {
